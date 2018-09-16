@@ -1,0 +1,8 @@
+.navbar {
+    background: black;
+}
+.navbarBrandHome img {
+    width: 60px;
+    height: auto;
+    margin-top: -.4em;
+}
