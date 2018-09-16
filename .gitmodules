@@ -1,3 +1,6 @@
 [submodule "src/web-commons"]
 	path = src/web-commons
 	url = git@github.com:OreoChip/web-commons.git
+[submodule "src/design-system"]
+	path = src/design-system
+	url = git@github.com:OreoChip/design-system.git

@@ -1,45 +1,83 @@
-import React, {PropTypes} from 'react';
-import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
-import styles from './navigation.css';
+import React, { PropTypes } from 'react';
+import withStyles from '@material-ui/core/styles/withStyles';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Header from 'design-system/components/Header/Header.jsx';
+import CustomDropdown from 'design-system/components/CustomDropdown/CustomDropdown.jsx';
+import Button from 'design-system/components/CustomButtons/Button.jsx';
+import navbarsStyle from 'design-system/assets/jss/material-kit-react/views/componentsSections/navbarsStyle.jsx';
 
-export default class Navigation extends React.Component {
-  static propTypes = {}
-  
+class Navigation extends React.Component {
+  static propTypes = {};
+
   render() {
+    const { classes } = this.props;
     return (
-      <Navbar inverse collapseOnSelect>
-      <Navbar.Header>
-        <Navbar.Brand>
-          <a href="home">React-Bootstrap</a>
-        </Navbar.Brand>
-        <Navbar.Toggle />
-      </Navbar.Header>
-      <Navbar.Collapse>
-        <Nav>
-          <NavItem eventKey={1} href="link1">
-            Link
-          </NavItem>
-          <NavItem eventKey={2} href="link2">
-            Link
-          </NavItem>
-          <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-            <MenuItem eventKey={3.1}>Action</MenuItem>
-            <MenuItem eventKey={3.2}>Another action</MenuItem>
-            <MenuItem eventKey={3.3}>Something else here</MenuItem>
-            <MenuItem divider />
-            <MenuItem eventKey={3.3}>Separated link</MenuItem>
-          </NavDropdown>
-        </Nav>
-        <Nav pullRight>
-          <NavItem eventKey={1} href="#">
-            Link Right
-          </NavItem>
-          <NavItem eventKey={2} href="#">
-            Link Right
-          </NavItem>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
-    )
+      <Header
+        brand="Slice of Heaven"
+        href="home"
+        color="transparent"
+        fixed
+        changeColorOnScroll={{
+          height: 400,
+          color: 'white'
+        }}
+        rightLinks={
+          <List className={classes.list}>
+            <ListItem className={classes.listItem}>
+              <Button
+                href="home"
+                className={classes.navLink}
+                // onClick={e => e.preventDefault()}
+                color="transparent"
+              >
+                Home
+              </Button>
+            </ListItem>
+            <ListItem className={classes.listItem}>
+              <Button
+                href="link2"
+                className={classes.navLink}
+                // onClick={e => e.preventDefault()}
+                color="transparent"
+              >
+                Cakes
+              </Button>
+            </ListItem>
+            <ListItem className={classes.listItem}>
+              <Button
+                href="link1"
+                className={classes.navLink}
+                // onClick={e => e.preventDefault()}
+                color="transparent"
+              >
+                Photo Cakes
+              </Button>
+            </ListItem>
+            <ListItem className={classes.listItem}>
+              <CustomDropdown
+                buttonText="Dropdown"
+                dropdownHeader="Dropdown Header"
+                buttonProps={{
+                  className: classes.navLink,
+                  color: 'transparent'
+                }}
+                dropdownList={[
+                  'Action',
+                  'Another action',
+                  'Something else here',
+                  { divider: true },
+                  'Separated link',
+                  { divider: true },
+                  'One more separated link'
+                ]}
+              />
+            </ListItem>
+          </List>
+        }
+      />
+    );
   }
 }
+
+export default withStyles(navbarsStyle)(Navigation);
