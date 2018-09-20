@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import withStyles from '@material-ui/core/styles/withStyles';
 // material-ui components
+import Typography from '@material-ui/core/Typography';
 import InputAdornment from '@material-ui/core/InputAdornment';
 // @material-ui/icons
 import People from '@material-ui/icons/People';
 import Email from '@material-ui/icons/Email';
 import ContactPhone from '@material-ui/icons/ContactPhone';
 import Message from '@material-ui/icons/Message';
+import Send from '@material-ui/icons/Send';
 // core components
 import GridContainer from 'design-system/components/Grid/GridContainer.jsx';
 import GridItem from 'design-system/components/Grid/GridItem.jsx';
 import CustomInput from 'design-system/components/CustomInput/CustomInput.jsx';
+import { Button } from '@material-ui/core';
 
 const styles = () => ({
   media: {
@@ -19,6 +22,16 @@ const styles = () => ({
     height: '75%',
     margin: '5%',
     paddingLeft: '10%'
+  },
+  button: {
+    background: 'white'
+  },
+  text: {
+    padding: 10
+  },
+  buttonContainer: {
+    justifyContent: 'center',
+    display: 'flex'
   }
 });
 
@@ -92,9 +105,20 @@ class ContactSection extends Component {
                   <InputAdornment position="end">
                     <Message />
                   </InputAdornment>
-                )
+                ),
+                underline: 'black'
               }}
             />
+          </GridItem>
+          <GridItem xs={12} sm={12} md={12} className={classes.buttonContainer}>
+            <Button
+              variant="extendedFab"
+              aria-label="Delete"
+              className={classes.button}
+            >
+              <Typography className={classes.text}>Send</Typography>
+              <Send />
+            </Button>
           </GridItem>
         </GridContainer>
       </GridContainer>
