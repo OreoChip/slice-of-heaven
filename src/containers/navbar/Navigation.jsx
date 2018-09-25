@@ -19,7 +19,7 @@ class Navigation extends React.Component {
         color="transparent"
         fixed
         changeColorOnScroll={{
-          height: 400,
+          height: 350,
           color: 'white'
         }}
         rightLinks={
@@ -36,7 +36,7 @@ class Navigation extends React.Component {
             </ListItem>
             <ListItem className={classes.listItem}>
               <Button
-                href="link2"
+                href="cakes"
                 className={classes.navLink}
                 // onClick={e => e.preventDefault()}
                 color="transparent"

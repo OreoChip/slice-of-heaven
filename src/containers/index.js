@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Navbar from '../containers/navbar/Navigation';
-import indexRoutes from 'routes/index.jsx';
-export default class IndexContainer extends Component {
-  constructor(props) {
-    super(props);
-  }
 
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import Navbar from 'containers/navbar/Navigation';
+import Footer from 'design-system/components/Footer/Footer.jsx';
+import indexRoutes from 'routes/index.jsx';
+
+export default class IndexContainer extends Component {
   render() {
     return (
       <Router>
@@ -19,6 +19,7 @@ export default class IndexContainer extends Component {
               );
             })}
           </Switch>
+          <Footer />
         </div>
       </Router>
     );

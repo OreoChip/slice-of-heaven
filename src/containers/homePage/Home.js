@@ -5,7 +5,6 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import classNames from 'classnames';
 import CakeCard from 'components/cakeCard';
 import FlavoursCard from 'components/flavourCard';
-import Footer from 'design-system/components/Footer/Footer.jsx';
 import ContactSection from 'components/contactSection';
 
 // @material-ui/icons
@@ -173,7 +172,6 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }
